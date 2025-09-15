@@ -102,26 +102,12 @@
       .review small {
         color: gray;
       }
-
-      /* Monaco time styling fixed on right */
-      #monaco-time {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        font-size: 18px;
-        font-weight: bold;
-        background: #f0f0f0;
-        padding: 8px 12px;
-        border-radius: 6px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      }
     </style>
   </head>
   <body>
-    <!-- Monaco time fixed on right -->
-    <div id="monaco-time">Loading Monaco time...</div>
-
     <div id="content">
+      <!-- Close icon removed -->
+
       <div id="timing" class="section active">
         <h3>Timings</h3>
         <div class="status-line" onclick="toggleTiming()">
@@ -205,22 +191,6 @@
         list.classList.toggle('show');
         arrow.classList.toggle('open');
       }
-
-      // Real-time Monaco clock
-      function updateMonacoTime() {
-        const options = {
-          timeZone: "Europe/Monaco",
-          hour: "numeric",
-          minute: "numeric",
-          second: "numeric",
-          hour12: true
-        };
-        const formatter = new Intl.DateTimeFormat([], options);
-        document.getElementById("monaco-time").textContent = "Monaco Time: " + formatter.format(new Date());
-      }
-
-      setInterval(updateMonacoTime, 1000);
-      updateMonacoTime(); // Initial call
     </script>
   </body>
 </html>
